@@ -91,8 +91,29 @@ def test_bbc_even_elements_2():
     driver.get('https://www.bbc.com/')
     # search_maybe_later_button = driver.find_element_by_class_name('sign_in-exit')
     # search_maybe_later_button.click()
-    search_even_elements_xpath = driver.find_element_by_xpath('//div [@class="orb-nav-section orb-nav-links orb-nav-focus"] /ul /li[position() mod 2 = 0]')
+    search_even_elements_xpath = driver.find_element_by_xpath(
+        '//div [@class="orb-nav-section orb-nav-links orb-nav-focus"] /ul /li[position() mod 2 = 0]')
 
     print(search_even_elements_xpath, "Четные элементы найдены по XPath")
-    driver.quit()
+    # driver.quit()
 
+
+def test_bbc_date_1():
+    driver.get('https://www.bbc.com/')
+    # search_maybe_later_button = driver.find_element_by_class_name('sign_in-exit')
+    # search_maybe_later_button.click()
+    search_date_css = driver.find_element_by_css_selector('.module--header h2')
+
+    print(search_date_css, "Дата найдена по CSS")
+    # driver.quit()
+
+
+def test_bbc_date_2():
+    driver.get('https://www.bbc.com/')
+    # search_maybe_later_button = driver.find_element_by_class_name('sign_in-exit')
+    # search_maybe_later_button.click()
+    search_date_xpath = driver.find_element_by_xpath(
+        '//section [@class="module module--header"] /h2 [@class="module__title"]')
+
+    print(search_date_xpath, "Дата найдена по XPath")
+    driver.quit()
